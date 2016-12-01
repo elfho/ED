@@ -1,0 +1,115 @@
+
+\chapter{Valence band of Silicon} % (fold)
+
+	\label{cha:valence_band_of_silicon}
+
+	The valence band of silicon is made by the overlapping of three subbands:
+	
+	\begin{itemize}
+		\item Heavy holes band
+		\item Light oholes bans
+		\item Spin-off band
+	\end{itemize}
+
+	These 3 subbands are all isotropic which means that they have the same effective mass in all directions:
+	
+	\begin{equation}
+		m_x=m_y=m_z
+	\end{equation}
+
+	In detail we have:
+	
+	\begin{itemize}
+		\item $m_{hh}=0.49m_0$ and we are able to write the dispersion relationship for the heavy holes band as: $E_v-E=\frac{\hbar^2k^2}{2m_{hh}}$
+		\item $m_{lh}=0.16m_0$ and we are able to write the dispersion relationship for the light holes band as: $E_v-E=\frac{\hbar^2k^2}{2m_{lh}}$
+		\item $m_{so}=0.29m_0$ and we are able to write the dispersion relationship for the spin-off band as: $E_v-E=\frac{\hbar^2k^2}{2m_{so}}$
+	\end{itemize}
+	
+	in which $k^2=k_x^2+k_y^2+k_z^2$
+	As we have isotropic bands we are able to plot E over k obtaining 3 parabolic curves, while in the $k_x$,$k_y$ and $k_z$ space we are going to have 3 spheres as larger as the effective mass is larger.
+
+	Considering the dispersion relations we can find the intersection with axes of the spheres:
+	
+	\begin{equation}
+		K=\pm \sqrt{\frac{2m_*(E_v-E)}{\hbar^2}}
+	\end{equation}
+	
+	and starting from them we can find the volume of sphere which will be usefull to calculate the density of states.
+	For example we can evaluate the volume of the sphere related to the heavy holes band.
+	
+	\begin{equation}
+		V_{hh}=\frac{4}{3} \pi \left[\sqrt{\frac{2m_{hh}(E_V-E)}{\hbar^2}} \right]^3
+	\end{equation}
+
+	Let's now evaluate the number of states in the same way we have done for the conduction band of generic semiconductors in chapter~\ref{number_of_states_CB}:
+	
+	\begin{equation}
+		N=\frac{V}{(\frac{2 \pi}{L})^3L^3}=\frac{4}{3} \pi\frac{1}{h^3} \sqrt{{8m_{hh}^3}} \sqrt{(E_V-E)^3}
+	\end{equation}
+
+	\begin{equation}
+		dN=\frac{4}{3} \pi\frac{1}{h^3} \sqrt{{8m_{hh}^3}} \frac{3}{2} \sqrt{(E_V-E)}dE
+	\end{equation}
+
+	Now we are able to get the densities of states as:
+
+	\begin{equation}
+		g_v^{hh}=\frac{8 \pi}{h^3}\sqrt{2m_{hh}^3}\sqrt{E_v-E}
+	\end{equation}
+	
+	\begin{equation}
+		g_v^{lh}=\frac{8 \pi}{h^3}\sqrt{2m_{lh}^3}\sqrt{E_v-E}
+	\end{equation}
+	
+	\begin{equation}
+		g_v^{so}=\frac{8 \pi}{h^3}\sqrt{2m_{so}^3}\sqrt{E_so-E}
+	\end{equation}
+
+	from which we can find the number of carriers evaluating the number of occupied states.
+
+	\begin{equation}
+		p^{hh}=\int_{-\infty}^{E_v} g_v^{hh}(1-f(E))=\int_{-\infty}^{E_v}\frac{8 \pi}{h^3}\sqrt{2m_{hh}^3}\sqrt{E_v-E}\frac{1}{1+e^{-\frac{E-E_f}{KT}}}dE
+	\end{equation}
+
+	Equation which can be simplified as done for the conduction band usign some variable changes:
+	
+	\[\left[x= \frac{E_v-E}{KT} \ \ \ \ \ \ \ \ \ \ dE=-KTdx \ \ \ \ \ \ \ \ \ \ \mu=\frac{E_v-E_f}{KT} \ \ \ \ \ \ \ \ \ \ x- \mu = \frac{E_f-E}{KT}\right]\]
+
+	\begin{equation}
+		p^{hh}=\frac{8 \pi}{h^3}\sqrt{2m_{hh}^3}(KT)^{\frac{3}{2}}\frac{\sqrt{\pi}}{2} \frac{2} {\sqrt{\pi}} \int_0^{+\infty} \frac{\sqrt{x}}{1+e^{x- \mu}}dx=N_vF_{\frac{1}{2}}(\mu)
+	\end{equation}
+		
+	we can also introduce:
+
+	\begin{itemize}
+		\item $N_v^{hh}=\frac{8 \pi}{h^3}\sqrt{2m_{hh}^3}(KT)^{\frac{3}{2}}\frac{\sqrt{\pi}}{2}$
+		\item $N_v^{lh}=\frac{8 \pi}{h^3}\sqrt{2m_{lh}^3}(KT)^{\frac{3}{2}}\frac{\sqrt{\pi}}{2}$
+		\item $N_v^{so}=\frac{8 \pi}{h^3}\sqrt{2m_{so}^3}(KT)^{\frac{3}{2}}\frac{\sqrt{\pi}}{2}$
+	\end{itemize}
+
+	\subsection{Holes concetration in valence band}
+		we can evaluate the number of carriers considering the contribution of the three subbands:
+
+		\begin{equation}
+			p_{v_tot}=p^{hh}+p^{lh}+p^{so}
+		\end{equation}
+
+		But we know that $E_v-E_{so}=44meV$ and as $44meV>>KT$ we are able to neglect the contribution of the spin-off band.
+
+		\begin{equation}
+			p=(N_v^{hh}+N_v^{lh})F_{\frac{1}{2}}(\mu)
+		\end{equation}
+		Where we have $N_v^{hh}+N_v^{lh}=1.83*10^19 cm^{-3}$
+
+
+	\subsection{Carriers density in Metals}
+		Let's consider the case of $E_f>E_c$.
+		In this case tha Maxwell-Bolzmann approximation cannot be used, but we can consider $f(E)$ as step function.
+
+		\[n=\int_{E_c}^{E_f}g_v(E)dE=\frac{48 \pi}{h^3}\sqrt{2m_t^2m_h}\sqrt{E-E_c}dE=\left[ \frac{48 \pi}{h^3}\sqrt{2m_t^2m_h}\frac{2}{3}{E-E_c} \right]_{E_c}^{E_f}=\]
+		 
+		 \begin{equation}
+		 = \frac{48 \pi}{h^3}\sqrt{2m_t^2m_l}(KT)^{\frac{3}{2}} \frac{\sqrt{x}}{2}	\frac{2}{\sqrt{x}} \frac{2}{3} \left(\frac{E_f-E_c}{KT}\right)^ {\frac{3}{2}} = N_c \frac{2}{3}  \frac{2}{\sqrt{x}} \left(\frac { E_f-E_c}{KT}\right)^{ \frac{3}{2} }=N_c\frac{2}{3} \frac{2}{\sqrt{\pi}} \mu^{\frac{3}{2}} 
+		 \end{equation}
+		
+		We can compare this result with the Maxwell-Bolzman approximation ($n=N_ce^{-\frac{E_c-E_f}{KT}}=N_ce^{\mu}$) and note that it's valid only for $\mu<-3$ and that the approximation error increase with $E_f$.

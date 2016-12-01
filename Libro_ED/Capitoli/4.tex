@@ -1,0 +1,99 @@
+
+\chapter{Incomplete ionization} % (fold)
+	
+	\label{cha:incomplete_ionization}
+
+	
+
+		Let's now consider the incomplete ionization.\\
+		\textbf{Example:}\ \ \ \  \ \ \ \ \ \ $T=77K \ \ \ \ \ \ \ \ \ \ N_d=10^{16} cm^{-3} \ \ \ \ \ \ \ \ \ \ E_c-E_d=54meV$
+
+		In this case we are at low temperature and we can neglect the holes concentration as the fermi level increase , so we have $n \approx N_d^+ $
+
+		\begin{equation}
+			n=N_ce^{-\frac{E_c-E_f}{KT}}=N_d\frac{1}{1+2e^{-\frac{E_d-E_f}{KT}}}=N_d^+
+		\end{equation}
+
+		\begin{equation}
+			N_d= N_ce^{-\frac{E_c-E_f}{KT}}{1+2e^{-\frac{E_d-E_f}{KT}}}
+		\end{equation}
+
+		with $x=e^{-\frac{E_c-E_f}{KT}}$ we have this equation:
+
+		\begin{equation}
+			2N_ce^{\frac{E_c-E_f}{KT}}x^2+N_cx-N_d=0
+		\end{equation}
+
+		We can easly calculate x:
+
+		\begin{equation}
+			x=\frac{-N_c \pm \sqrt{N_c^2+8N_dN_ce^{\frac{E_c-E_d}{KT}}}}{4N_ce^{\frac{E_c-E_d}{KT}}}=e^{-\frac{E_c-E_d}{KT}}
+		\end{equation}
+
+		\begin{equation}
+			E_c-E_f = - KT ln \left( -N_c + \frac { \sqrt { N_c^2+ 8N_d N_c e^ { \frac {E_c-E_d} {KT} } }} {4N_ce^{\frac{E_c-E_d}{KT}}}\right)
+		\end{equation}
+		
+		Considering our example:
+		
+		\begin{itemize}
+			\item $N_c(77K) = 3.68*10^18 cm^{-3}$
+			\item $KT(77K) = 6.64meV$
+		\end{itemize}
+		we get: $E_c-E_f=49.6meV=7.48KT$ despite $E_c-E_f$ looks large , at this temperature $KT$ is quiet low and so as $E_C-E_f>>KT$ the Maxwell-Bolzaman approximation is stiil valid.
+
+	\subsection{Extrinsic zone}
+
+		Let's consider now $T>>RT$ , we cannot neglect the number of holes but we can make the complete ionization assumption, so we have:
+		
+		\begin{equation}
+		 	n=p+N_d^+ \approx \frac{n_i^2}{N_d}+N_d 
+		\end{equation}
+		
+		from which we can write a simple equation to find n:
+		
+		\begin{equation}
+		 	n^2-N_dn-n_i^2=0
+		\end{equation}
+		
+		\textbf{Electron density at high temperatures:}
+		
+		\[n=\frac{N_d+\sqrt{N_d^2+4n_i^2}}{2}\]
+	
+	\subsection{Freeze-out zone}
+
+			If we consider instead $T<<RT$ we neglect the holes concentration but we have to consider the incomplete ionization:
+
+			\begin{equation}
+				n \approx N_d^+ = N_d\frac{1}{1+2e^{-\frac{E_d-E_f+E_c-E_c}{KT}}}= N_d\frac{1}{1+2e^{-\frac{E_c-E_f}{KT}}e^{\frac{E_c-E_d}{KT}}\frac{N_c}{N_c}}=N_d\frac{1}{1+2\frac{n}{N_c}e^{-\frac{E_c-E_d}{KT}}}
+			\end{equation}
+
+			we get a simple equation to find n:
+
+			\begin{equation}
+				\frac{2}{N_c}e^{\frac{E_c-E_d}{KT}}n^2+n+-N_d=0
+			\end{equation}
+			
+			\begin{equation}
+				n= \frac { 1+\sqrt {1+\frac{8N_d}{N_c}e^{\frac{E_c-E_d}{KT}} } } { \frac{4}{N_c}e^{\frac{E_c-E_d}{KT}}}\approx \frac{\sqrt{\frac{8N_d}{N_c}}e^{\frac{E_c-E_d}{KT}}}{\frac{4}{N_c}e^{\frac{E_c-E_d}{KT}}}
+			\end{equation}
+			
+			\begin{equation}
+				n=\sqrt{\frac{N_cN_d}{2}}e^{-\frac{E_c-E_d}{KT}}
+			\end{equation}
+
+			Considering this result we can find an expression for the Fermi level at low temperature:
+
+			\begin{equation}
+				N_ce^{-\frac{E_c-E_f}{KT}}=\sqrt{\frac{N_cN_d}{2}}e^{-\frac{E_c-E_d}{KT}}
+			\end{equation}
+
+			\begin{equation}
+				E_f=\frac{E_c+E_d}{2}+KTln\sqrt{ \frac{N_d}{2N_c}}
+			\end{equation}
+
+
+			From which we can notice that at very low temperatures the Fermi level is placed in the middle point between $E_c$ and $E_d$.
+
+			
+% chapter incomplete_ionization (end)

@@ -1,0 +1,47 @@
+\chapter{Electrostatic analisys of semiconductor materials} % (fold)
+\label{cha:electrostatic_analisys}
+
+Let's note how adding an exernal potential to the crystal the periodic potential configurations and the bands are shifted.
+When the external potential is positive the bands are bended downwards.
+
+Under the effective mass approximation we can consider electrons in the crystal as free particles subjected only to external forces.
+So external potential is the only thing we need to invetigate the behaviour of our carriers.
+
+\begin{equation}
+ 	\vec{F}=-\vec{\nabla} \phi  \ \ \ \  \Longrightarrow \ \ \ \  	\vec{F}=- \frac{d\phi}{dx}
+ \end{equation} 
+
+\begin{equation}
+	\vec{\nabla}\vec{F}= \frac{\rho}{\epsilon_{si}} \ \ \ \  \Longrightarrow \ \ \ \ \frac{dF}{dx}=\frac{\rho}{\epsilon_{si}}
+\end{equation}
+From which we get:
+
+\begin{equation}
+	\vec{\nabla}(-\vec{\nabla}\phi)= -\vec{\nabla}^2\phi=\frac{\rho}{\epsilon_{si}}
+\end{equation}
+
+And we are able to write the \textbf{Poisson equation for semiconductor materials}
+\begin{equation}
+	\frac{d^2\phi}{dx^2}=-\frac{\rho^2}{\epsilon_{si}}=-\frac{q}{\epsilon_{si}}(p-n+Nd^+-Na^-)
+\end{equation}
+
+Assuming n doped silicon we can neglect holes and Na is nil, so we can write:
+
+
+\begin{equation}
+	\frac{d^2\phi}{dx^2}=-\frac{q}{\epsilon_{si}}(Nd^+-n)= -\frac{q}{\epsilon_{si}}(Nd + \Delta Nd(x)-n_ie^{\frac{q(\phi+\Delta \phi(x) -\phi_f)}{KT}})
+\end{equation}
+
+\begin{equation}
+	\frac{d^2\phi}{dx^2}=-\frac{q}{\epsilon_{si}}\Delta Nd(x)+\frac{q^2Nd}{\epsilon_{si}KT}\Delta\phi(x)
+\end{equation}
+ This is a second order non omogeneous differential equation that has as result an exponential behaviour:
+
+ \begin{equation}
+ 	\Delta \phi(x) \propto e^{-\frac{x}{L_d}}
+ \end{equation}
+
+ where Ld defined as the debye length is $L_d= \sqrt{\frac{\epsilon_{si}KT}{q^2Nd}}$
+
+ 
+% chapter electrostatic_analisys (end)

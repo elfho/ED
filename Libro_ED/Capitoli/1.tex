@@ -1,0 +1,299 @@
+\chapter{Semiconductors}
+	\label{semiconductors}
+
+	Silicon has a thetrahedral structure repeated periodically in the crystal.
+	Due to this periodic configuration , electrons are subject to periodic potential and, as we know from Shrodinger equation, there only spedific bands of energy allowed.
+
+	\subsubsection{Valence band}
+		
+		It's the last band filled at 0K.
+	
+	\subsubsection{Conduction band}
+	
+		It's the first band empty band at 0K.
+	
+	\subsection{Semiconductors band Structure}
+	
+		In semiconductors we have the Valence band completely filled and the conduction band completely empty.
+		In this condition also if you apply a electric field you cannot have flow of electrons as there are no free states in the valences band in which electrons are able to move.
+		Usually the energy gap between VB and CB is something near 1eV and if we increase the temperature some electron can be excited to the conduction band\footnote{Remember the magnitude of the thermal energy : $KT=25meV$}.
+
+		Now that we have some electrons in CB if we apply an electric field we are able to obtain some current.
+		In particular we can have electrons moving in the CB and holes moving in the VB.
+		Note that in dielectric we can't have current as the the energy gap is much more higher than in semiconductors, so electrons are not able to reach the conduction band due to the thermal energy.
+
+	\subsection{Metals band structure}
+	
+		In metals the VB and the CB are overlapped , so electrons are free to move in any case as there in no energy gap to be jumped.
+
+	\section{Silicon band structure}
+	
+		Silicon is a semiconductor material , in particular at room temperature it has $E_{gap}=1,12eV$
+
+		\subsection{Energy gap}
+
+			The silicon's energy gap changes with temperature following the law:
+
+			\begin{equation}
+				E_g(T)=E_g(0)-\frac{\alpha T^2}{\beta + T}
+			\end{equation}
+		
+			in which:
+		
+			\begin{itemize}
+				\item $\alpha = 4.73*10^{-4}\frac{eV}{K}$
+				\item $\beta = 636K$
+				\item $E_g(0)=1.17eV$
+			\end{itemize}
+
+			It's intresting to notice the derivative of the energy gap:
+
+			\begin{equation}
+				\frac{dE_g}{dT}(T)=\frac{-2\alpha T (\beta + T)^2 + \alpha T^2}{(\beta + T)^2}
+			\end{equation}
+
+			For example we have:
+
+
+			\begin{equation}
+				\frac{dE_g^{Si}}{dT}(300K)=-2.5*10^{-4}\frac{eV}{K}
+			\end{equation}
+
+			So we have $25meV$ of variation over $100K$ excursion.
+			This value looks negligible in front of the energy gap , but we have compare it with ...............
+
+		\subsection{Density of States}
+
+			Let's compute how many states we have in the valence band.
+
+			\begin{equation}
+				E-E_c=\frac{\hslash^2k_x^2}{2m_x}+\frac{\hslash^2k_y^2}{2m_y}+\frac{\hslash^2k_z^2}{2m_z}
+			\end{equation}
+
+			We cannot plot E as it should be a 4-dimensional plot but we can have a look on constant energy surfaces.
+
+			\begin{equation}
+				E-E_c=\frac{\hslash^2k_x^2}{2m_x}
+			\end{equation}
+
+			And we can get the intersection with axes:
+
+			\begin{equation}
+				k_x=\sqrt {\frac { 2m_x(E-E_c)} {\hslash^2} }	
+			\end{equation}
+
+			\begin{equation}
+				k_y=\sqrt{\frac{2m_y(E-E_c)}{\hslash^2}} 	
+			\end{equation}
+
+			\begin{equation}
+				k_z=\sqrt{\frac{2m_z(E-E_c)}{\hslash^2}}
+			\end{equation}
+
+			Note as the larger is the energy the larger are the intersections, and all points inside the ellipsoide have a lower energy in comparison on the surface.
+
+			We are able to compute the volume of the ellipsoid:
+
+			\begin{equation}
+				V=\frac{4}{3}\pi \sqrt{\frac{2m_x(E-E_c)}{\hslash^2}} \sqrt{\frac{2m_y(E-E_c)}{\hslash^2}} \sqrt{\frac{2m_z(E-E_c)}{\hslash^2}}=\frac{4}{3}\pi \frac{\sqrt{8m_x m_y m_z}}{\hslash^3}\sqrt{(E-E_c)}
+			\end{equation}
+
+		\subsection{Number of states in conduction band}
+			\label{number_of_states_CB}
+			\begin{equation}
+				N=\frac{V}{(\frac{2\pi}{L})^3}=\frac{Ellipsoide \ Volume}{ Volume \ of \ one \ state }= \frac{4}{3} \frac{\pi}{(2\pi)^3} \frac{\sqrt{8m_x m_y m_z}}{\hslash^3}\sqrt{(E-E_c)^3}= \frac{4}{3} \frac{\pi}{h^3} {\sqrt{8m_x m_y m_z}}\sqrt{(E-E_c)^3}
+			\end{equation}
+
+			from which:
+
+			\begin{equation}
+				dN=\frac{4}{3} \frac{\pi}{h^3} {\sqrt{8m_x m_y m_z}}\frac{3}{2}\sqrt{(E-E_c)}dE
+			\end{equation}
+
+			Now we can compute the number of states in the conduction band as:
+
+			\begin{equation}
+				dN=\frac{4}{3} \frac{\pi}{h^3} {\sqrt{8m_x m_y m_z}}\frac{3}{2}\sqrt{(E-E_c)}dE
+			\end{equation}
+
+			\begin{equation}
+				g_c(E)=\frac{4\pi}{h^3}\sqrt{2 m_x m_y m_z} \sqrt{E-E_c} * 2 * 6
+			\end{equation}
+		
+			Where we multiply by 2 due the possibility of the presence of both spins in the same state and for 6 due to the degeneracy.
+			In conculsion we have:
+
+			\begin{equation}
+				g_c(E)=\frac{48\pi}{h^3}\sqrt{2 m_t^2 m_l} \sqrt{E-E_c}=\frac{48\pi}{h^3}\sqrt{2 m_{dos}^3} \sqrt{E-E_c}
+			\end{equation}
+
+			In which we define $m_{dos}=\sqrt[3]{m_t^2m_l}$ remembering that $m_x=m_z=m_t=0.19m_0$ and $m_y=m_l=0.92m_0$.\footnote{this is valid for silicon}
+
+		\subsection{Electron density}
+
+			Only under thermodynamic equilibrium\footnote{Condition in which there are no net processes} we can use the Fermi-Dirac distribution to determine how many states of the conduction band are occupied by electrons:
+
+			\begin{equation}
+				f(E)=\frac{1}{1+e^{ \frac{E-E_f}{KT} } }
+			\end{equation}
+
+			then if we have $E-E_f >> KT$ we can use the Maxwell-Boltzman approximation:
+
+			\begin{equation}
+				f_{MB}(E)=e^{ \frac{E-E_f}{KT}}
+			\end{equation}
+			
+			Note that in the M.B. approximation we have $f_{MB}(E_f)=1$ , but as we know this is not true as by definition we have $f(E_f)=\frac{1}{2}$.
+			Let's compute now the number of electrons in the conduction band multiplying the number of states by the probability to have them filled:
+
+			\begin{equation}
+				n=\int_{E_c}^{\infty}g_c(E)f(E)dE= \frac{48\pi}{h^3}\sqrt{2 m_{dos}^3} \sqrt{E-E_c}\frac{1}{1+e^{ \frac{E-E_f}{KT} } }
+			\end{equation}
+
+			This integral cannot be solved analitically but we are able to simplify the expression using some variable changes:
+
+			\begin{itemize}
+				\item $\frac{E-E_c}{KT}=x$
+				\item $\frac{E_f-E}{KT}=\mu$
+				\item $dE=KTdx$
+				\item $x-\mu=\frac{E-E_f}{KT}$
+			\end{itemize}
+			 
+			 we get:
+
+			 \begin{equation}
+				n=\frac{48\pi}{h^3}\sqrt{2 m_t^2m_l} \int_0^{\infty} \frac{\sqrt{KT}\sqrt{x}}{1+e^{x- \mu}}KTdx=\frac{48\pi}{h^3}\sqrt{2 m_t^2m_l} (KT)^{\frac{3}{2}} \frac{\sqrt{ \pi}}{2} \frac{2}{\sqrt{ \pi}} \int_0^{\infty} \frac{\sqrt{x}}{1+e^{x- \mu}}dx=N_cF_{\frac{1}{2}}( \mu) 	
+			 \end{equation}
+
+			In which we define:
+
+			\begin{itemize}
+				\item $N_c=\frac{48\pi}{h^3}\sqrt{2 m_t^2m_l} (KT)^{\frac{3}{2}} \frac{\sqrt{ \pi}}{2}$
+				\item $ F_{\frac{1}{2}}( \mu)= \frac{2}{ \sqrt{ \pi}} \int_0^{\infty} \frac{\sqrt{x}}{1+e^{x- \mu}} dx $	
+			\end{itemize}
+
+			If $x- \mu >> 1$ we can make an approximation and write : $F_{\frac{1}{2}}( \mu)=\frac{2}{\sqrt{x}}\int_0^{\infty}\sqrt{x}e^{-x+ \mu}dx= e^{ \mu}$.\footnote{Remembering the average value of a normal Gaussian curve: $\int_0^{\infty}\sqrt{x}e^{-x}dx=\frac{\sqrt{\pi}}{2}$}
+
+			So we have:
+
+			\begin{equation}
+				n=N_ce^ {\mu}= N_ce^ {-\frac{E-E_f}{KT}}
+			\end{equation}
+
+			The number of holes can be found with the same approach:
+			\begin{equation}
+				p= \int_{-\infty}^{E_v} g_c(E)(1-f(E)) dE=N_vF_{\frac {1} {2} }( \mu)
+			\end{equation}
+
+			from which we get:
+			\begin{equation}
+				p=N_ve^{-\frac{E_f-E_v}{KT}}
+			\end{equation}
+
+		\subsection{Intrinsic Fermi level} % (fold)
+			\label{sub:intrinsic_Fermi_level}
+			 In intrinsic silicon we have $p=n$
+
+			 \[N_ce^ {\mu}= N_ce^ {-\frac{E-E_f}{KT}}=N_vF_{\frac {1} {2} }( \mu)\]
+
+			 from which we get the intrinsic Fermi level:
+			
+			\begin{equation}
+				\label{eq:Fermi}
+				E_f = \frac {E_c+E_v}{2}+KTln(\frac{N_c}{N_v})
+			\end{equation}
+
+			% subsection intrinsic_Fermi_level (end)
+
+		\subsection{Intrinsic carriers concentration} % (fold)
+			\label{sub:intrinsic_carriers_concentration}
+
+			Now we can compute the number of instrinsic carriers for silicon:
+
+			\begin{equation}
+				n=p=n_i=N_ce^{-\frac{E_c-E_f}{KT}}=N_ce^{-\frac{E_g}{2KT}}e^{ln(\frac{N_c}{N_v})^{-\frac{1}{2}}}=\sqrt{N_cN_v}e^{-\frac{E_g}{2KT}}
+			\end{equation}
+
+			\[n_i( 300K )=1.45 * 10^{10} cm^{-3}\]
+
+			Let's notice as there is an exponential dependence from the energy gap which is stricly related to the temperature; if the temperature increase the carriers density increase a lot.
+			% subsection intrinsic_carriers_concentration (end)
+
+			\begin{equation}
+				n=n_ie^{\frac{E_f-E_i}{KT}}
+			\end{equation}
+
+			\begin{equation}
+				p=n_ie^{\frac{E_i-E_v}{KT}}
+			\end{equation}
+			 
+			 These are general expressions, valid also for non intrinsic silicon.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
